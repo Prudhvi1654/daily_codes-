@@ -1,0 +1,22 @@
+# Rotate a matrix by 90 degrees
+
+# Read size of matrix
+n = int(input("Enter n: "))
+
+# Read matrix input
+matrix = []
+for i in range(n):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+# Create result matrix
+r = [[0] * n for _ in range(n)]
+
+# Rotate 90 degrees
+for i in range(n):
+    for j in range(n):
+        r[j][n - 1 - i] = matrix[i][j]
+
+# Print rotated matrix
+for row in r:
+    print(*row)
