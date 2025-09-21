@@ -1,0 +1,16 @@
+s=input().strip()
+distinct_chars=set(s)
+total_distinct=len(distinct_chars)
+min_string=''
+min_length=len(s)
+for i in range(len(s)):
+    seen=[]
+    for j in range(i,len(s)):
+        if s[j] not in seen:
+            seen.append(s[j])
+        if len(seen)==total_distinct:
+            if j-i+1<=min_length:
+                min_length=j-i+1
+                min_string=s[i:j+1]
+            break
+print(min_string)
